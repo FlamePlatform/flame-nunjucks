@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FlameNunjucks = undefined;
 
 var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");
 
@@ -39,18 +38,18 @@ try {
   nunjucks = require("parent-require")("nunjucks");
 }
 
-var FlameNunjucks = exports.FlameNunjucks = (function (_HTMLResponse) {
-  (0, _inherits3.default)(FlameNunjucks, _HTMLResponse);
+var RenderResponse = (function (_HTMLResponse) {
+  (0, _inherits3.default)(RenderResponse, _HTMLResponse);
 
-  function FlameNunjucks(req, res) {
-    (0, _classCallCheck3.default)(this, FlameNunjucks);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(FlameNunjucks).call(this, req, res));
+  function RenderResponse(req, res) {
+    (0, _classCallCheck3.default)(this, RenderResponse);
+    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(RenderResponse).call(this, req, res));
   }
 
-  (0, _createClass3.default)(FlameNunjucks, [{
+  (0, _createClass3.default)(RenderResponse, [{
     key: "send",
     value: function send(view, data) {
-      (0, _get3.default)((0, _getPrototypeOf2.default)(FlameNunjucks.prototype), "send", this).call(this, nunjucks.render(view, data));
+      (0, _get3.default)((0, _getPrototypeOf2.default)(RenderResponse.prototype), "send", this).call(this, nunjucks.render(view, data));
     }
   }, {
     key: "render",
@@ -58,5 +57,7 @@ var FlameNunjucks = exports.FlameNunjucks = (function (_HTMLResponse) {
       this.send(view, data);
     }
   }]);
-  return FlameNunjucks;
+  return RenderResponse;
 })(_flameresponse.HTMLResponse);
+
+exports.default = RenderResponse;
