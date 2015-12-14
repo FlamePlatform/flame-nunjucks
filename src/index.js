@@ -1,4 +1,4 @@
-import {HTMLResponse} from "flameresponse";
+import {HTMLResponse} from "flame-response";
 try{
 var nunjucks = require('nunjucks');
 }catch(_){
